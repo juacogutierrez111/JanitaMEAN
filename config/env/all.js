@@ -2,11 +2,11 @@
 
 module.exports = {
 	app: {
-		title: 'MEAN',
-		description: 'Full-Stack JavaScript with MongoDB, Express, AngularJS, and Node.js',
+		title: 'JANITA',
+		description: 'JANITA descripción...',
 		keywords: 'MongoDB, Express, AngularJS, Node.js'
 	},
-	port: process.env.PORT || 3000,
+	port: 1485 || 3000, //process.env.PORT
 	templateEngine: 'swig',
 	sessionSecret: 'MEAN',
 	sessionCollection: 'sessions',

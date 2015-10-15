@@ -1,15 +1,15 @@
 'use strict';
 
 module.exports = {
-      db: 'mongodb://localhost/mean-dev',
+      db: 'mongodb://localhost/janita',
 	//db: 'mongodb://localhost/mean-dev',
 	app: {
-		title: 'MEAN - Development Environment'
+		title: 'JANITA - Development Environment'
 	},
 	facebook: {
-		clientID: process.env.FACEBOOK_ID || 'APP_ID',
-		clientSecret: process.env.FACEBOOK_SECRET || 'APP_SECRET',
-		callbackURL: 'http://localhost:3000/auth/facebook/callback'
+		clientID: process.env.FACEBOOK_ID || '457476291098798',
+		clientSecret: process.env.FACEBOOK_SECRET || 'a273fed4307fe575e17e155a725ffcea',
+		callbackURL: 'http://local.janita.com:1485/auth/facebook/callback'
 	},
 	twitter: {
 		clientID: process.env.TWITTER_KEY || 'CONSUMER_KEY',
