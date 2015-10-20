@@ -67,6 +67,10 @@ var UserSchema = new Schema({
 		required: 'Provider is required'
 	},
 	providerData: {},
+	providerDataFacebook: {},
+	providerDataLinkedin: {},
+	providerDataTwetter: {},
+	providerDataGoogle: {},
 	additionalProvidersData: {},
 	roles: {
 		type: [{
