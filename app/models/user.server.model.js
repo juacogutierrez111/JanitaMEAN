@@ -70,6 +70,7 @@ var UserSchema = new Schema({
 	providerDataFacebook: {},
 	providerDataLinkedin: {},
 	providerDataTwetter: {},
+	providerDataGoogle: {},
 	additionalProvidersData: {},
 	roles: {
 		type: [{
