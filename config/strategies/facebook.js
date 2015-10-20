@@ -36,8 +36,8 @@ module.exports = function () {
         }
         
         if (typeof profile.emails === 'undefined') {
-            profile.emails = 'undefined';
-        }
+                profile.emails = 'undefined';
+            }
         
         if (typeof profile.username === 'undefined') {
             profile.username = 'undefined';
@@ -45,7 +45,6 @@ module.exports = function () {
         
         // Create the user OAuth profile
         var providerUserProfile = {
-            
             firstName: profile.name.givenName,
             lastName: profile.name.familyName,
             displayName: profile.displayName,
