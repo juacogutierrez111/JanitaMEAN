@@ -79,6 +79,8 @@ var UserSchema = new Schema({
 		}],
 		default: ['user']
 	},
+	providerDataSocial: {}
+	,
 	updated: {
 		type: Date
 	},

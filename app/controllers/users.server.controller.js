@@ -47,7 +47,7 @@ exports.signup = function(req, res) {
 	user.provider = 'local';
 	user.displayName = user.firstName + ' ' + user.lastName;
 
-	// Then save the user 
+	// Then save the user
 	user.save(function(err) {
 		if (err) {
 			return res.send(400, {
@@ -319,12 +319,16 @@ exports.saveOAuthUserProfile = function(req, providerUserProfile, done) {
 			}
 		});
 	} else {
+		// Siempre debe entrar por ac�, el usuario debe estar logeado antes de 'autenticarse' con un proveedor adicional (facebook, linkedin...).
 		// User is already logged in, join the provider data to the existing user
 		var user = req.user;
 
-		// Check if user exists, is not signed in using this provider, and doesn't have that provider data already configured
+		// Check if user exists, is not signed in using this provider, and doesn't have that provider data already configured. Qu� pasa cu�ndo actualiza la info del proveedor.
+		// user.provider debe ser local siempre.
 		if (user.provider !== providerUserProfile.provider && (!user.additionalProvidersData || !user.additionalProvidersData[providerUserProfile.provider])) {
 			// Add the provider data to the additional provider data field
+			// Lo asigna dependiendo de si es facebook, linkedin, google+...
+
 			if (!user.additionalProvidersData) user.additionalProvidersData = {};
 			user.additionalProvidersData[providerUserProfile.provider] = providerUserProfile.providerData;
 
