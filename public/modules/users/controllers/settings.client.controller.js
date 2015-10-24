@@ -72,6 +72,7 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 
 			var formatedProvider = {};
 			if (provider === 'facebook') {
+				formatedProvider.ImagenPerfil = $scope.user.additionalProvidersData[provider].picture.data['url'];
 				formatedProvider['Nombre'] = $scope.user.additionalProvidersData[provider].first_name;
 				formatedProvider.Apellido = $scope.user.additionalProvidersData[provider].last_name;
 				formatedProvider.Sexo = ($scope.user.additionalProvidersData[provider].gender==='male'?'Hombre':'Mujer');
@@ -80,6 +81,7 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 				formatedProvider.TipoIdentidad = 'Red Social';
 				formatedProvider.ProveedorIdentidad = 'Facebook';
 				formatedProvider.FacebookId = $scope.user.additionalProvidersData[provider].id;
+				formatedProvider.ImagenPerfil = $scope.user.additionalProvidersData[provider].picture.data['url'];
 			}
 			$scope.formatedProvider1 = formatedProvider;
 			return Object.keys(formatedProvider);
