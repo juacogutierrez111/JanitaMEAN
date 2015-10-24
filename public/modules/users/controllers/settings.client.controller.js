@@ -63,5 +63,29 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 				$scope.error = response.message;
 			});
 		};
+
+
+		/**
+		 * Create instance method for returning provider formated data
+		 */
+		$scope.formatProviderData = function(provider) {
+
+			var formatedProvider = {};
+			if (provider === 'facebook') {
+				formatedProvider.ImagenPerfil = $scope.user.additionalProvidersData[provider].picture.data['url'];
+				formatedProvider['Nombre'] = $scope.user.additionalProvidersData[provider].first_name;
+				formatedProvider.Apellido = $scope.user.additionalProvidersData[provider].last_name;
+				formatedProvider.Sexo = ($scope.user.additionalProvidersData[provider].gender==='male'?'Hombre':'Mujer');
+				formatedProvider.Email = $scope.user.additionalProvidersData[provider].email;
+				formatedProvider.FechaAutenticacion = '01/11/2015';
+				formatedProvider.TipoIdentidad = 'Red Social';
+				formatedProvider.ProveedorIdentidad = 'Facebook';
+				formatedProvider.FacebookId = $scope.user.additionalProvidersData[provider].id;
+				formatedProvider.ImagenPerfil = $scope.user.additionalProvidersData[provider].picture.data['url'];
+			}
+			$scope.formatedProvider1 = formatedProvider;
+			return Object.keys(formatedProvider);
+		};
+
 	}
 ]);

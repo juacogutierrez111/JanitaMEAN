@@ -45,8 +45,8 @@ var UserSchema = new Schema({
 		type: String,
 		trim: true,
 		default: '',
-		validate: [validateLocalStrategyProperty, 'Por favor ingrese su correo electrónico'],
-		match: [/.+\@.+\..+/, 'Por favor ingrese un correo electrónico válido.']
+		validate: [validateLocalStrategyProperty, 'Por favor ingrese su correo electrï¿½nico'],
+		match: [/.+\@.+\..+/, 'Por favor ingrese un correo electrï¿½nico vï¿½lido.']
 	},
 	username: {
 		type: String,
@@ -57,7 +57,7 @@ var UserSchema = new Schema({
 	password: {
 		type: String,
 		default: '',
-		validate: [validateLocalStrategyPassword, 'La clave debe ser más larga']
+		validate: [validateLocalStrategyPassword, 'La clave debe ser mï¿½s larga']
 	},
 	salt: {
 		type: String
@@ -79,6 +79,8 @@ var UserSchema = new Schema({
 		}],
 		default: ['user']
 	},
+	providerDataSocial: {}
+	,
 	updated: {
 		type: Date
 	},
@@ -117,6 +119,7 @@ UserSchema.methods.hashPassword = function(password) {
 UserSchema.methods.authenticate = function(password) {
 	return this.password === this.hashPassword(password);
 };
+
 
 /**
  * Find possible not used username
